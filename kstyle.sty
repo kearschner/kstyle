@@ -34,12 +34,10 @@
 
 \usepackage[shortlabels]{enumitem}
 
-
+\usepackage{graphicx}
 \usepackage{scalerel}
-\usepackage{svg}
 
-
-\def\tritriangleup{\scalerel*{\includesvg{graphics/tritriangleup.svg}}{$\blacksquare$}}
+\def\tritriangleup{\scalerel*{\includegraphics{graphics/tritriangleup.pdf}}{\hfill$blacksquare$}}
 
 \renewcommand{\qed}{\hfill\tritriangleup}
 
