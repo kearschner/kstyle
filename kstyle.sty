@@ -35,6 +35,14 @@
 \usepackage[shortlabels]{enumitem}
 
 
+\usepackage{scalerel}
+\usepackage{svg}
+
+
+\def\tritriangleup{\scalerel*{\includesvg{graphics/tritriangleup.svg}}{$\blacksquare$}}
+
+\renewcommand{\qed}{\hfill\tritriangleup}
+
 \newcommand{\sep}{\ | \ }
 \newcommand{\OR}{\sep}
 \newcommand{\stack}[2]{\genfrac{}{}{0pt}{0}{#1}{#2}}
@@ -76,7 +84,6 @@
     \medskip
 }
 
-\renewcommand{\qed}{\hfill$\blacksquare$}
 
 \let\newproof\proof
 \renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
