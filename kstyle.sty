@@ -1,0 +1,82 @@
+\ProvidesPackage{kstyle}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows}
+
+\usepackage{amsmath, amsthm, amssymb, scrextend}
+\usepackage{float}
+
+\usepackage{verbatim}
+\usepackage{mathtools}
+
+\usepackage[boxed,linesnumbered]{algorithm2e}
+%\DontPrintSemicolon
+\SetArgSty{}
+
+\usepackage{xparse}
+\NewDocumentCommand{\graphdeg}{mg}{
+    \ensuremath{
+        \IfNoValueTF{#2}{
+            \text{deg}(#1)
+        }
+        {
+            \text{deg}_{#2}(#1)
+        }
+    }
+}
+
+\usepackage{titlesec}
+\usepackage{fmtcount}
+
+\usepackage[shortlabels]{enumitem}
+
+
+\newcommand{\sep}{\ | \ }
+\newcommand{\OR}{\sep}
+\newcommand{\stack}[2]{\genfrac{}{}{0pt}{0}{#1}{#2}}
+\newcommand{\pnd}{\#}
+
+\newcommand{\ecomp}{,\\}
+
+\newcommand{\reduce}{\leq_m}
+\newcommand{\texttm}{\text{TM}}
+
+\newcommand{\enc}[1]{\ensuremath{\langle #1 \rangle}}
+\newcommand{\arr}[2]{\ensuremath{#1[#2]}}
+\newcommand{\Oof}[1]{\ensuremath{O(#1)}}
+\newcommand{\func}[2]{\ensuremath{\text{#1}(#2)}}
+
+\newcommand{\Z}{\ensuremath{\mathbf{Z}}}
+\newcommand{\inZ}{\ensuremath{\in\Z}}
+
+\newcommand{\tand}{\text{ and }}
+\newcommand{\divides}{\text{ divides }}
+\newcommand{\st}{\text{ s.t. }}
+
+\newcommand{\sseq}{\subseteq}
+
+\newcommand{\braced}[1]{\ensuremath{\{ #1 \}}}
+\newcommand{\bbar}[1]{\ensuremath{\overline{#1}}}
+
+
+\newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+
+\newcommand{\bigsep}{
+    \par
+    % add some vertical space
+    \addvspace{\smallskipamount}%
+    % the rule realized as leaders, so it disappears at a page break
+    % see also http://tex.stackexchange.com/a/61643/4427
+    \leaders\vrule width \textwidth\vskip0.4pt
+    % some other vertical space
+    \medskip
+}
+
+\renewcommand{\qed}{\hfill$\blacksquare$}
+
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
